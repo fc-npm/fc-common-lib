@@ -1,0 +1,31 @@
+{
+  "name": "query-composer",
+  "version": "0.0.1",
+  "description": "generate query params with different input.",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npm run build",
+    "flow": "flow"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.forceclouds.com/npm/query-composer.git"
+  },
+  "keywords": [
+    "url",
+    "query",
+    "params"
+  ],
+  "author": "pengbo.wang@forceclouds.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-flow": "^7.7.4"
+  },
+  "dependencies": {
+    "flow-bin": "^0.112.0"
+  }
+}
