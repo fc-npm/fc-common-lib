@@ -1,4 +1,4 @@
-import { fromObject, fromObjectArray, parseParamObject } from '../src/index';
+import { fromObject, fromObjectArray, parseParamObject } from '../src/query-composer';
 
 describe('index', () => {
   // toBe: address or shallow compare

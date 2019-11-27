@@ -1,13 +1,17 @@
-# Query-composer  
-为不同格式的数据生成外部链接的 url 参数提供功能性函数。  
+# fc-common-lib  
+前端公用的依赖库集合
 
-## 提示
-本库只处理生成 query 参数的工作，不处理前缀 ?，请开发者自行添加。
+## QueryComposer  
+本库只处理生成 query 参数的工作，不处理前缀 ?，请开发者自行添加。  
 
-## Usage  
-**fromObject**  
-
+1. only use part of dependencies.
 ```javascript
-import * as QueryComposer from 'query-composer';
+import * as QueryComposer from 'fc-common-lib/query-composer';
+
+QueryComposer.fromObject({});
+```
+2. use total lib  
+```javascript
+import { QueryComposer } from 'fc-common-lib';
 QueryComposer.fromObject({});
 ```
