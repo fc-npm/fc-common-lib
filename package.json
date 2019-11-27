@@ -1,7 +1,7 @@
 {
-  "name": "query-composer",
+  "name": "fc-common-lib",
   "version": "0.0.2",
-  "description": "generate query params with different input.",
+  "description": "common front-end library for forceclouds",
   "main": "index.js",
   "scripts": {
     "build": "babel src/ -d .",
@@ -11,13 +11,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.forceclouds.com/npm/query-composer.git"
+    "url": "https://gitlab.forceclouds.com/npm/fc-common-lib.git"
   },
-  "keywords": [
-    "url",
-    "query",
-    "params"
-  ],
   "author": "pengbo.wang@forceclouds.com",
   "license": "ISC",
   "devDependencies": {

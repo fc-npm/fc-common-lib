@@ -1,2 +1,6 @@
 # if you wanna deploy sourcecode, just uncomment below line.
 # src/
+.babelrc
+.flowconfig
+.prettierrc
+.gitignore
