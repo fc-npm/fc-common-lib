@@ -2,9 +2,9 @@
   "name": "query-composer",
   "version": "0.0.1",
   "description": "generate query params with different input.",
-  "main": "lib/index.js",
+  "main": "index.js",
   "scripts": {
-    "build": "babel src/ -d lib/",
+    "build": "babel src/ -d .",
     "test": "jest",
     "prepublishOnly": "npm run test && npm run build",
     "flow": "flow"

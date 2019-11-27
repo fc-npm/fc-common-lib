@@ -1,2 +1,3 @@
 node_modules/*
-lib/*
+# *.js will ignore all .js file and /*.js only ignore in current dir.
+/*.js
