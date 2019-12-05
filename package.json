@@ -1,6 +1,6 @@
 {
   "name": "fc-common-lib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "common front-end library for forceclouds",
   "main": "index.js",
   "scripts": {

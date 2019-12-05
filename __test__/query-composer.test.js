@@ -1,6 +1,9 @@
-import { fromObject, fromObjectArray, parseParamObject } from '../src/query-composer';
+/**
+ * 欢迎添加更多的单元测试增强程序健壮性
+ */
+import { fromObject, fromObjectArray, parseParamObject, fromString } from '../src/query-composer';
 
-describe('index', () => {
+describe('query-composer', () => {
   // toBe: address or shallow compare
   // toEqual: value and deep compare
 
@@ -9,12 +12,8 @@ describe('index', () => {
     expect(fromObject({})).toBe('');
 
     // you have to wrap a function here when testing exception
-    expect(function() {
-      fromObject();
-    }).toThrow();
-    expect(function() {
-      fromObject(null);
-    }).toThrow();
+    expect(fromObject()).toBe('');
+    expect(fromObject(null)).toBe('');
   });
 
   test('parseParamObject', () => {
@@ -41,5 +40,18 @@ describe('index', () => {
         (value) => (value > 20 ? 100 : 0),
       ),
     ).toEqual('id=110&name=poberwong&age=100');
+  });
+
+  test('fromString', () => {
+    expect(fromString()).toBe('');
+    expect(fromString('a\nb\nc')).toBe('a&b&c');
+    expect(fromString('a=1\nb=2\nc=3')).toBe('a=1&b=2&c=3');
+    expect(fromString('a=1\nb=2\nc=3\n')).toBe('a=1&b=2&c=3');
+    expect(fromString('\na=1\nb=2\nc=3')).toBe('a=1&b=2&c=3');
+    expect(fromString('a={{1}}\nb={{2}}\nc={{3}}\n')).toBe('a=1&b=2&c=3');
+    expect(fromString('a=1\nb=2\nc=3', (matched) => matched + matched)).toBe('a=1&b=2&c=3');
+    expect(fromString('a={{1}}\nb={{2}}\nc={{3}}\n', (matched) => matched + matched)).toBe(
+      'a=11&b=22&c=33',
+    );
   });
 });

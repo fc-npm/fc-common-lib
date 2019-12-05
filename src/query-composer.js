@@ -8,7 +8,7 @@
  */
 export function fromObject(input: number): string {
   if (typeof input !== 'object' || input === null) {
-    throw new Error('illegal params');
+    return '';
   }
 
   let result = '';
@@ -49,10 +49,41 @@ export function parseParamObject(
   }
 }
 
+/**
+ * convert array consists of object which parsed by @see parseParamObject.
+ * @param {Array} input
+ * @param {Function} exec
+ */
 export function fromObjectArray(input: Array<Object>, exec?: Function): string {
-  if (!input || !Array.isArray(input) || input.length === 0) {
-    throw new Error('illegal params');
+  if (!Array.isArray(input) || input.length === 0) {
+    return '';
   }
 
-  return input.map((item) => parseParamObject(item, exec)).join('&');
+  return input
+    .map((item) => parseParamObject(item, exec))
+    .filter((item) => item)
+    .join('&');
+}
+
+export function parseLine(input: string, exec?: Function = (value) => value): string {
+  if (!input) {
+    return '';
+  }
+
+  return input.replace(/\{\{(.*)\}\}/, (matched, matchedPart) => exec(matchedPart));
+}
+
+/**
+ * convert text-area divided by '\n' into query params
+ * @param {string} input
+ */
+export function fromString(input: string, exec?: Function): string {
+  if (typeof input !== 'string') {
+    return '';
+  }
+  const lines = input.split('\n');
+  return lines
+    .map((item) => parseLine(item, exec))
+    .filter((item) => item)
+    .join('&');
 }
