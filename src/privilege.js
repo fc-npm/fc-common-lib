@@ -13,6 +13,7 @@ import indexOf from 'lodash/indexOf';
 const ACTION_PERMISSION_CODE_MAP = {
   ADD: 1,
   RELATEDADD: 1,
+  SAVE: 1,
   EDIT: 2,
   UPDATE: 2,
   WIPE: 2,
