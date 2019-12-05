@@ -87,3 +87,11 @@ export function fromString(input: string, exec?: Function): string {
     .filter((item) => item)
     .join('&');
 }
+
+export default {
+  fromString,
+  fromObject,
+  fromObjectArray,
+  parseLine,
+  parseParamObject,
+};

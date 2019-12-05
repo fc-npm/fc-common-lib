@@ -100,3 +100,12 @@ export function isPermissionEnough(permissionValue: number, permissionCode: numb
 export function checkCode(permissionCode: number, expectedCode: number) {
   return permissionCode === expectedCode;
 }
+
+export default {
+  checkAction,
+  checkFieldInOkArr,
+  checkObject,
+  checkTab,
+  isPermissionEnough,
+  checkCode,
+};

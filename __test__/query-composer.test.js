@@ -1,7 +1,9 @@
 /**
  * 欢迎添加更多的单元测试增强程序健壮性
  */
-import { fromObject, fromObjectArray, parseParamObject, fromString } from '../src/query-composer';
+import QueryComposer from '../src/query-composer';
+
+const { fromObject, fromObjectArray, parseParamObject, fromString } = QueryComposer;
 
 describe('query-composer', () => {
   // toBe: address or shallow compare

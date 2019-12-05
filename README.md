@@ -6,7 +6,7 @@
 
 1. only use part of dependencies.
 ```javascript
-import * as QueryComposer from 'fc-common-lib/query-composer';
+import QueryComposer from 'fc-common-lib/query-composer';
 
 QueryComposer.fromObject({});
 ```

@@ -1,7 +1,10 @@
 /**
  * 欢迎添加更多的单元测试增强程序健壮性
  */
-import { checkAction, checkObject, isPermissionEnough, checkFieldInOkArr } from '../src/privilege';
+import Privilege from '../src/privilege';
+
+const { checkAction, checkObject, isPermissionEnough, checkFieldInOkArr } = Privilege;
+// you can use Privilege.checkAction to invoke the function.
 
 describe('privilege', () => {
   test('checkAction', () => {

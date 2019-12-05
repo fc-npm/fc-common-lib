@@ -1,3 +1,4 @@
-import * as QueryComposer from './query-composer';
+import QueryComposer from './query-composer';
+import Privilege from './privilege';
 
-export { QueryComposer };
+export { QueryComposer, Privilege };
