@@ -1,6 +1,6 @@
 {
   "name": "fc-common-lib",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "common front-end library for forceclouds",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
     "babel-jest": "^24.9.0",
     "flow-bin": "^0.112.0",
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
   }
 }
