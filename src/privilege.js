@@ -19,8 +19,20 @@ const ACTION_PERMISSION_CODE_MAP = {
   DELETE: 4,
 };
 
-export function checkAction(actionCode: string, permissions: any, objectApiName: string) {
-  return checkObject(permissions, objectApiName, ACTION_PERMISSION_CODE_MAP[actionCode]);
+export function checkAction(
+  actionCode: string,
+  permissions: any,
+  objectApiName: string,
+  actionPermissionMap: Object,
+) {
+  const permissionCode = (isEmpty(actionPermissionMap)
+    ? ACTION_PERMISSION_CODE_MAP
+    : actionPermissionMap)[actionCode];
+  if (permissionCode === undefined) {
+    return false;
+  }
+
+  return checkObject(permissions, objectApiName, permissionCode);
 }
 
 /** ============================================== Base Function ============================================== */
@@ -70,7 +82,13 @@ export function checkTab(permissionValue: number, expectedValue: number = 2) {
  * @param {number} permissionCode
  */
 export function isPermissionEnough(permissionValue: number, permissionCode: number) {
-  return (permissionValue | Math.pow(2, permissionCode)) === permissionValue;
+  const value = parseInt(permissionValue);
+  const code = parseInt(permissionCode);
+
+  if (isNaN(value) || isNaN(code)) {
+    return false;
+  }
+  return (value | Math.pow(2, code)) === value;
 }
 
 /**
