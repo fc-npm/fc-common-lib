@@ -10,13 +10,16 @@
 
 ## 使用范例（QueryComposer）  
 
-1. only use part of the lib.
-```javascript
+1. only use part of the lib.  
+
+```javascript  
 import QueryComposer from 'fc-common-lib/query-composer';
 
 QueryComposer.fromObject({});
 ```
-2. use total lib  
+
+2. use total lib.  
+
 ```javascript
 import { QueryComposer } from 'fc-common-lib';
 QueryComposer.fromObject({});
